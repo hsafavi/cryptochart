@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col col-sm-9">
+    <canvas
+      baseChart
+      [datasets]="config.lineChartData"
+      [labels]="config.lineChartLabels"
+      [options]="config.lineChartOptions"
+      [legend]="config.lineChartLegend"
+      [type]="'line'"
+      [plugins]="config.lineChartPlugins"
+    >
+    </canvas>
+  </div>
+  <div class="col col-sm-3">
+    <app-symbolPairButton
+      [symbol1]="'btc'"
+      [symbol2]="'usdt'"
+      #btcusdt
+      [config]="config"
+      [color]="'#f00b'"
+      [pointColor]="'#f00b'"
+    ></app-symbolPairButton>
+    <app-symbolPairButton
+      [symbol1]="'eth'"
+      [symbol2]="'usdt'"
+      [config]="config"
+      [color]="'#00fb'"
+      [pointColor]="'#00fb'"
+    ></app-symbolPairButton>
+    <app-symbolPairButton
+      [symbol1]="'atom'"
+      [symbol2]="'usdt'"
+      [config]="config"
+      [color]="'#0f0b'"
+      [pointColor]="'#0f0b'"
+    ></app-symbolPairButton>
+    <app-symbolPairButton
+      [symbol1]="'matic'"
+      [symbol2]="'usdt'"
+      [config]="config"
+      [color]="'#f60b'"
+      [pointColor]="'#f60b'"
+    ></app-symbolPairButton>
+    <app-symbolPairButton [symbol1]="'bnb'" [symbol2]="'usd'" [config]="config"
+    [color]="'#f06b'"
+    [pointColor]="'#f06b'">
+    </app-symbolPairButton>
+    
+  </div>
+</div>
