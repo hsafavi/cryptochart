@@ -7,23 +7,19 @@ import {HttpClient} from '@angular/common/http'
 export class DataProviderService {
 
 constructor(private client: HttpClient) { }
-getSymbol(symbol1: String, symbol2:String){
-  let date=new Date();
-  
-  date.setDate(date.getDate()-1)
-  
-  const subject =  this.client.get(`https://cex.io/api/ohlcv/hd/${this.toNormalDateString(date)}/${symbol1}/${symbol2}`
+getSymbol(symbol1: String){
+  const subject =  this.client.get(`https://api.coingecko.com/api/v3/coins/${symbol1.toLowerCase()}/market_chart?vs_currency=USD&days=30&interval=daily`
   )
 
   return subject
 }
-toNormalDateString(date: Date) {
-  var mm = date.getUTCMonth() + 1;
-  var dd = date.getUTCDate();
+// toNormalDateString(date: Date) {
+//   var mm = date.getUTCMonth() + 1;
+//   var dd = date.getUTCDate();
 
-  return [date.getUTCFullYear(),
-          (mm>9 ? '' : '0') + mm,
-          (dd>9 ? '' : '0') + dd
-         ].join('');
-};
+//   return [date.getUTCFullYear(),
+//           (mm>9 ? '' : '0') + mm,
+//           (dd>9 ? '' : '0') + dd
+//          ].join('');
+// };
 }

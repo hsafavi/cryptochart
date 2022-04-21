@@ -8,18 +8,14 @@ import { SymbolPairButtonComponent } from '../partials/symbolPairButton/symbolPa
   templateUrl: './btc.component.html',
   styleUrls: ['./btc.component.css'],
 })
-export class BtcComponent implements AfterViewInit {
+export class BtcComponent implements OnInit {
   constructor(private dataProvider: DataProviderService) {}
-  ngAfterViewInit(): void {
-    this.btcusdt.btnClicked()
-  }
   
  @ViewChild('btcusdt') btcusdt!:SymbolPairButtonComponent
   ngOnInit() {
-   
+   this.config.addPair('bitcoin','btc','#f00b','#f00b')
    
   }
   config: ChartConfig = new ChartConfig(this.dataProvider);
 
- 
 }

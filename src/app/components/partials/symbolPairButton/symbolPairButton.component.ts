@@ -12,23 +12,28 @@ export class SymbolPairButtonComponent implements OnInit {
 
   
   btnclass = 'btn-secondary';
-  @Input() symbol1!: String
-  @Input() symbol2 !: String 
+  @Input() symbolName!: String
+  @Input() symbol !: String 
   @Input()
   config!: ChartConfig;
   @Input()
   color!: Color
   @Input()
   pointColor!: Color
+  @Input()
+  isActive:boolean = false
   ngOnInit() {
+    if(this.isActive){
+      this.btnclass = 'btn-primary'
+    }
   }
   btnClicked(){
     if (this.btnclass == 'btn-primary') {
       this.btnclass = 'btn-secondary';
-      this.config.removePair(this.symbol1, this.symbol2)
+      this.config.removePair(this.symbolName, this.symbol)
     } else {
       this.btnclass = 'btn-primary';
-      this.config.addPair(this.symbol1, this.symbol2,this.color, this.pointColor)
+      this.config.addPair(this.symbolName, this.symbol,this.color, this.pointColor)
     }
   }
 }

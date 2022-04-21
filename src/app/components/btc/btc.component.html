@@ -13,35 +13,36 @@
   </div>
   <div class="col col-sm-3">
     <app-symbolPairButton
-      [symbol1]="'btc'"
-      [symbol2]="'usdt'"
+      [symbolName]="'bitcoin'"
+      [symbol]="'btc'"
       #btcusdt
       [config]="config"
       [color]="'#f00b'"
       [pointColor]="'#f00b'"
+      [isActive]="true"
     ></app-symbolPairButton>
     <app-symbolPairButton
-      [symbol1]="'eth'"
-      [symbol2]="'usdt'"
+      [symbolName]="'ethereum'"
+      [symbol]="'eth'"
       [config]="config"
       [color]="'#00fb'"
       [pointColor]="'#00fb'"
     ></app-symbolPairButton>
     <app-symbolPairButton
-      [symbol1]="'atom'"
-      [symbol2]="'usdt'"
+      [symbolName]="'cosmos'"
+      [symbol]="'atom'"
       [config]="config"
       [color]="'#0f0b'"
       [pointColor]="'#0f0b'"
     ></app-symbolPairButton>
     <app-symbolPairButton
-      [symbol1]="'matic'"
-      [symbol2]="'usdt'"
+      [symbolName]="'matic-network'"
+      [symbol]="'matic'"
       [config]="config"
       [color]="'#f60b'"
       [pointColor]="'#f60b'"
     ></app-symbolPairButton>
-    <app-symbolPairButton [symbol1]="'bnb'" [symbol2]="'usd'" [config]="config"
+    <app-symbolPairButton [symbolName]="'binancecoin'" [symbol]="'bnb'" [config]="config"
     [color]="'#f06b'"
     [pointColor]="'#f06b'">
     </app-symbolPairButton>
