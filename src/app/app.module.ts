@@ -9,6 +9,7 @@ import {DataProviderService} from './services/dataProvider.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SymbolPairButtonComponent } from './components/partials/symbolPairButton/symbolPairButton.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SymbolPairButtonComponent } from './components/partials/symbolPairButto
     HttpClientModule,
     BrowserAnimationsModule,
     NgChartsModule,
-    NgbModule
+    NgbModule,
+    NgxSpinnerModule
 
   ],
   providers: [DataProviderService],

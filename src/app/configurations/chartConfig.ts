@@ -35,7 +35,7 @@ export class ChartConfig {
   private getData(symbolName: String, symbol: String) {
     this.dataProvider.getSymbol(symbolName).subscribe({
       next: (data: any) => {
-    
+       
         data.prices.forEach((p: any[]) => {
           const dataIndex = this.findIndex(symbolName, symbol);
           this.lineChartData[dataIndex].data.push(p[1]);
