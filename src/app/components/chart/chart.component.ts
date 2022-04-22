@@ -5,10 +5,10 @@ import { SymbolPairButtonComponent } from '../partials/symbolPairButton/symbolPa
 
 @Component({
   selector: 'app-btc',
-  templateUrl: './btc.component.html',
-  styleUrls: ['./btc.component.css'],
+  templateUrl: './chart.component.html',
+  styleUrls: ['./chart.component.css'],
 })
-export class BtcComponent implements OnInit {
+export class ChartComponent implements OnInit {
   constructor(private dataProvider: DataProviderService) {}
   
  @ViewChild('btcusdt') btcusdt!:SymbolPairButtonComponent
