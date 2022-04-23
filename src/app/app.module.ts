@@ -10,13 +10,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SymbolPairButtonComponent } from './components/partials/symbolPairButton/symbolPairButton.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
-
+import { ButtonsDirective } from './directives/cryptoButtonsHost.directive';
+import { FormsModule } from '@angular/forms';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChartComponent,
-    SymbolPairButtonComponent
+    SymbolPairButtonComponent,
+    ButtonsDirective, 
   ],
   imports: [
     BrowserModule,
@@ -25,8 +28,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     BrowserAnimationsModule,
     NgChartsModule,
     NgbModule,
-    NgxSpinnerModule
-
+    NgxSpinnerModule,
+    FormsModule,
+    ColorPickerModule,
   ],
   providers: [DataProviderService],
   bootstrap: [AppComponent]

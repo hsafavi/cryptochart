@@ -5,35 +5,43 @@ import { ChartConfig } from 'src/app/configurations/chartConfig';
 @Component({
   selector: 'app-symbolPairButton',
   templateUrl: './symbolPairButton.component.html',
-  styleUrls: ['./symbolPairButton.component.css']
+  styleUrls: ['./symbolPairButton.component.css'],
 })
 export class SymbolPairButtonComponent implements OnInit {
 
-
-  
+  ///properties 
   btnclass = 'btn-secondary';
-  @Input() symbolName!: String
-  @Input() symbol !: String 
+  @Input() symbolName!: String;
+  @Input() symbol!: String;
+  @Input() symbolId!: String;
   @Input()
   config!: ChartConfig;
   @Input()
-  color!: Color
+  color!: Color;
   @Input()
-  pointColor!: Color
+  pointColor!: Color;
   @Input()
-  isActive:boolean = false
+  isActive: boolean = false;
+
+  /// methods 
   ngOnInit() {
-    if(this.isActive){
-      this.btnclass = 'btn-primary'
+    if (this.isActive) {
+      this.btnclass = 'btn-primary';
     }
   }
-  btnClicked(){
+  btnClicked() {
     if (this.btnclass == 'btn-primary') {
       this.btnclass = 'btn-secondary';
-      this.config.removePair(this.symbolName, this.symbol)
+      this.config.removePair(this.symbolName, this.symbol);
     } else {
       this.btnclass = 'btn-primary';
-      this.config.addPair(this.symbolName, this.symbol,this.color, this.pointColor)
+      this.config.addPair(
+        this.symbolName,
+        this.symbol,
+        this.symbolId,
+        this.color,
+        this.pointColor
+      );
     }
   }
 }

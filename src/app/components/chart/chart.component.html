@@ -12,8 +12,10 @@
     </canvas>
   </div>
   <div class="col col-sm-3">
-    <app-symbolPairButton
+   <div class="row ">
+     <app-symbolPairButton
       [symbolName]="'bitcoin'"
+      [symbolId]="'bitcoin'"
       [symbol]="'btc'"
       #btcusdt
       [config]="config"
@@ -23,6 +25,7 @@
     ></app-symbolPairButton>
     <app-symbolPairButton
       [symbolName]="'ethereum'"
+      [symbolId]="'ethereum'"
       [symbol]="'eth'"
       [config]="config"
       [color]="'#00fb'"
@@ -30,23 +33,49 @@
     ></app-symbolPairButton>
     <app-symbolPairButton
       [symbolName]="'cosmos'"
+      [symbolId]="'cosmos'"
       [symbol]="'atom'"
       [config]="config"
       [color]="'#0f0b'"
       [pointColor]="'#0f0b'"
     ></app-symbolPairButton>
     <app-symbolPairButton
-      [symbolName]="'matic-network'"
+      [symbolName]="'matic network'"
+      [symbolId]="'matic-network'"
       [symbol]="'matic'"
       [config]="config"
       [color]="'#f60b'"
       [pointColor]="'#f60b'"
     ></app-symbolPairButton>
-    <app-symbolPairButton [symbolName]="'binancecoin'" [symbol]="'bnb'" [config]="config"
-    [color]="'#f06b'"
-    [pointColor]="'#f06b'">
+    <app-symbolPairButton
+      [symbolName]="'binance coin'"
+      [symbolId]="'binancecoin'"
+      [symbol]="'bnb'"
+      [config]="config"
+      [color]="'#f06b'"
+      [pointColor]="'#f06b'"
+    >
     </app-symbolPairButton>
-    
+    <app-symbolPairButton
+      [symbolName]="'cardano'"
+      [symbolId]="'cardano'"
+      [symbol]="'ada'"
+      [config]="config"
+      [color]="'#f66b'"
+      [pointColor]="'#f66b'"
+    ></app-symbolPairButton>
+    <ng-template cryptoButtons> </ng-template>
+  </div> 
+    <div class="row">
+      <form  (ngSubmit)="addSymbol()" #addForm="ngForm">
+      crypto symbol
+      <input type="text" placeholder="like btc" class="form-control" required name="cryptoSymbol" [(ngModel)]="cryptoSymbol" />
+      with line color
+      <span [(colorPicker)]="selectedColor" [style.background]="selectedColor" role="button" class="rounded-3 p-3 mx-1 d-inline-block border border-secondary align-middle"></span>
+      <input type="submit" class="btn btn-success" [disabled]="addForm.invalid" value="add crypto" >
+     
+    </form>
+    </div>
   </div>
 </div>
 <ngx-spinner type="ball-scale-multiple"></ngx-spinner>

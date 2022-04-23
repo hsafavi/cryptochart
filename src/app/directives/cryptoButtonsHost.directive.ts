@@ -1,7 +1,7 @@
 import { Directive, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[appButtons]'
+  selector: '[cryptoButtons]'
 })
 export class ButtonsDirective {
 
