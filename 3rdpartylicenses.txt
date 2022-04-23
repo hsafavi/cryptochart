@@ -135,6 +135,12 @@ terms above.
 ng2-charts
 ISC
 
+ngx-color-picker
+MIT
+
+ngx-spinner
+MIT
+
 rxjs
 Apache-2.0
                                Apache License
