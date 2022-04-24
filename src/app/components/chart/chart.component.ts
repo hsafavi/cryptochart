@@ -76,6 +76,12 @@ export class ChartComponent implements OnInit, AfterViewInit {
       this.addedSymbols.push(btn);
       this.setCryptoListInLocal();
     }
+    else{
+      this.errorMsg = 'not suported symbol!'
+      setTimeout(() => {
+        this.errorMsg = ''
+      }, 3000);
+    }
   }
   addSymbolButton(s: SymbolButtonConfig): SymbolPairButtonComponent {
     const b = this.cryptoButtons.viewContainerRef.createComponent(
