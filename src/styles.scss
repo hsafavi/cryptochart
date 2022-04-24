@@ -5,3 +5,14 @@
 .btn-block{
     width: 95%; margin: auto;
 }
+.btn-warning {
+    color: #000;
+    background-color: #f7521e;
+    border-color: #f83d10;
+}
+
+.btn-warning:hover {
+    color: #000;
+    background-color: #ff762c;
+    border-color: #f56436;
+}

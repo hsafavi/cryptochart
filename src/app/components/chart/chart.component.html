@@ -13,61 +13,11 @@
   </div>
   <div class="col col-sm-3">
    <div class="row ">
-     <app-symbolPairButton
-      [symbolName]="'bitcoin'"
-      [symbolId]="'bitcoin'"
-      [symbol]="'btc'"
-      #btcusdt
-      [config]="config"
-      [color]="'#f00b'"
-      [pointColor]="'#f00b'"
-      [isActive]="true"
-    ></app-symbolPairButton>
-    <app-symbolPairButton
-      [symbolName]="'ethereum'"
-      [symbolId]="'ethereum'"
-      [symbol]="'eth'"
-      [config]="config"
-      [color]="'#00fb'"
-      [pointColor]="'#00fb'"
-    ></app-symbolPairButton>
-    <app-symbolPairButton
-      [symbolName]="'cosmos'"
-      [symbolId]="'cosmos'"
-      [symbol]="'atom'"
-      [config]="config"
-      [color]="'#0f0b'"
-      [pointColor]="'#0f0b'"
-    ></app-symbolPairButton>
-    <app-symbolPairButton
-      [symbolName]="'matic network'"
-      [symbolId]="'matic-network'"
-      [symbol]="'matic'"
-      [config]="config"
-      [color]="'#f60b'"
-      [pointColor]="'#f60b'"
-    ></app-symbolPairButton>
-    <app-symbolPairButton
-      [symbolName]="'binance coin'"
-      [symbolId]="'binancecoin'"
-      [symbol]="'bnb'"
-      [config]="config"
-      [color]="'#f06b'"
-      [pointColor]="'#f06b'"
-    >
-    </app-symbolPairButton>
-    <app-symbolPairButton
-      [symbolName]="'cardano'"
-      [symbolId]="'cardano'"
-      [symbol]="'ada'"
-      [config]="config"
-      [color]="'#f66b'"
-      [pointColor]="'#f66b'"
-    ></app-symbolPairButton>
+    
     <ng-template cryptoButtons> </ng-template>
   </div> 
     <div class="row">
-      <form  (ngSubmit)="addSymbol()" #addForm="ngForm">
+      <form  (ngSubmit)="addSymbol(cryptoSymbol)" #addForm="ngForm">
       crypto symbol
       <input type="text" placeholder="like btc" class="form-control" required name="cryptoSymbol" [(ngModel)]="cryptoSymbol" />
       with line color
@@ -75,6 +25,9 @@
       <input type="submit" class="btn btn-success" [disabled]="addForm.invalid" value="add crypto" >
      
     </form>
+    <div class="text-danger">
+      {{errorMsg}}
+    </div>
     </div>
   </div>
 </div>

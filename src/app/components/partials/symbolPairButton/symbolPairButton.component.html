@@ -1,1 +1,5 @@
-<div class="btn btn-block m-1" [class]="btnclass" (click)="btnClicked()">{{symbol.toUpperCase()}}</div>
+
+<div class="d-flex my-1">
+<button class="btn flex-grow-1" [class]="btnclass" (click)="btnClicked()">{{symbolConfig.symbol.toUpperCase()}}</button>
+<button class="btn-warning btn" (click)="remove()">X</button>
+</div>

@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Color } from 'chart.js';
 import { ChartConfig } from 'src/app/configurations/chartConfig';
+import { SymbolButtonConfig } from 'src/app/configurations/symbolButtonConfig';
+
 
 @Component({
   selector: 'app-symbolPairButton',
@@ -11,37 +13,33 @@ export class SymbolPairButtonComponent implements OnInit {
 
   ///properties 
   btnclass = 'btn-secondary';
-  @Input() symbolName!: String;
-  @Input() symbol!: String;
-  @Input() symbolId!: String;
   @Input()
   config!: ChartConfig;
-  @Input()
-  color!: Color;
-  @Input()
-  pointColor!: Color;
-  @Input()
-  isActive: boolean = false;
-
+ 
+  @Input() symbolConfig:SymbolButtonConfig = new SymbolButtonConfig()
+  @Output() onRemove: EventEmitter<any> = new EventEmitter() 
   /// methods 
   ngOnInit() {
-    if (this.isActive) {
+    if (this.symbolConfig.isActive) {
       this.btnclass = 'btn-primary';
     }
   }
   btnClicked() {
     if (this.btnclass == 'btn-primary') {
       this.btnclass = 'btn-secondary';
-      this.config.removePair(this.symbolName, this.symbol);
+      this.config.removePair(this.symbolConfig.symbolName, this.symbolConfig.symbol);
     } else {
       this.btnclass = 'btn-primary';
       this.config.addPair(
-        this.symbolName,
-        this.symbol,
-        this.symbolId,
-        this.color,
-        this.pointColor
+        this.symbolConfig.symbolName,
+        this.symbolConfig.symbol,
+        this.symbolConfig.symbolId,
+        this.symbolConfig.color,
+        this.symbolConfig.pointColor
       );
     }
+  }
+  remove(){
+    this.onRemove.emit()
   }
 }
